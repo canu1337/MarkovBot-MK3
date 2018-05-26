@@ -1,7 +1,7 @@
 from flask import Flask, request
 import telebot, logging
 from random import randint
-import ConfigParser
+import configparser
 import markovify
 import re
 import spacy
@@ -10,7 +10,7 @@ from spacy.lang.fr.examples import sentences
 
 app = Flask(__name__)
 
-Config = ConfigParser.ConfigParser()
+Config = configparser.ConfigParser()
 Config.read('/config/config.ini')
 key = Config.get('Main', 'key')
 url = Config.get('Main', 'url')
